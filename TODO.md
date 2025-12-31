@@ -16,14 +16,14 @@ A minimal project to practice gRPC communication between two Node.js microservic
 
 - [x] Initialize `product-service` with TypeScript
 - [x] Initialize `order-service` with TypeScript
-- [x] Create shared `proto/` folder
+- [x] Create `proto/` folder in each service (self-contained)
 - [x] Install gRPC dependencies
 
 ---
 
-## Phase 2: Define gRPC Contract
+## Phase 2: Define gRPC Contract ✅
 
-- [ ] Create `proto/product.proto` with:
+- [x] Create `proto/product.proto` with:
   - `GetProduct` - Fetch product by ID
   - `CheckStock` - Verify stock availability
 
@@ -59,14 +59,16 @@ A minimal project to practice gRPC communication between two Node.js microservic
 
 ```
 grpc-microservice/
-├── proto/
-│   └── product.proto
 ├── product-service/
+│   ├── proto/
+│   │   └── product.proto    ← Own copy of contract
 │   ├── src/
 │   │   ├── server.ts
 │   │   └── handlers/
 │   └── package.json
 ├── order-service/
+│   ├── proto/
+│   │   └── product.proto    ← Own copy of contract
 │   ├── src/
 │   │   ├── server.ts
 │   │   └── grpc-client/
