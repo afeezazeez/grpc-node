@@ -3,7 +3,7 @@ import * as protoLoader from '@grpc/proto-loader';
 import path from 'path';
 
 const PROTO_PATH = path.join(__dirname, '../../proto/product.proto');
-const PRODUCT_SERVICE_URL = 'localhost:50051';
+const PRODUCT_GRPC_URL = process.env.PRODUCT_GRPC_URL || 'localhost:50051';
 
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
   keepCase: true,
@@ -16,7 +16,7 @@ const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
 const productProto = grpc.loadPackageDefinition(packageDefinition) as any;
 
 const client = new productProto.product.ProductService(
-  PRODUCT_SERVICE_URL,
+  PRODUCT_GRPC_URL,
   grpc.credentials.createInsecure()
 );
 
