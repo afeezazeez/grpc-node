@@ -1,0 +1,7 @@
+// Product service gRPC contract
+// Will be implemented in Phase 2
+
+syntax = "proto3";
+
+package product;
+
