@@ -38,12 +38,12 @@ A minimal project to practice gRPC communication between two Node.js microservic
 
 ---
 
-## Phase 4: Build Order Service (gRPC Client + REST)
+## Phase 4: Build Order Service (gRPC Client + REST) ✅
 
-- [ ] Set up Express server on port `3000`
-- [ ] Create gRPC client
-- [ ] `POST /orders` - Creates order, calls gRPC to validate product & stock
-- [ ] That's it!
+- [x] Set up Express server on port `3000`
+- [x] Create gRPC client
+- [x] `POST /orders` - Creates order, calls gRPC to validate product & stock
+- [x] That's it!
 
 ---
 
