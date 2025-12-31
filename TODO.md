@@ -29,12 +29,12 @@ A minimal project to practice gRPC communication between two Node.js microservic
 
 ---
 
-## Phase 3: Build Product Service (gRPC Server)
+## Phase 3: Build Product Service (gRPC Server) ✅
 
-- [ ] Set up gRPC server on port `50051`
-- [ ] Hardcode a few products in memory
-- [ ] Implement `GetProduct` handler
-- [ ] Implement `CheckStock` handler
+- [x] Set up gRPC server on port `50051`
+- [x] Hardcode a few products in memory
+- [x] Implement `GetProduct` handler
+- [x] Implement `CheckStock` handler
 
 ---
 
@@ -61,17 +61,27 @@ A minimal project to practice gRPC communication between two Node.js microservic
 grpc-microservice/
 ├── product-service/
 │   ├── proto/
-│   │   └── product.proto    ← Own copy of contract
+│   │   └── product.proto
 │   ├── src/
 │   │   ├── server.ts
-│   │   └── handlers/
+│   │   ├── data/
+│   │   │   └── products.ts
+│   │   ├── routes/
+│   │   │   └── productRoutes.ts
+│   │   ├── controllers/
+│   │   │   └── productController.ts
+│   │   └── grpc/
+│   │       ├── grpcServer.ts
+│   │       └── handlers/
+│   │           └── productHandlers.ts
 │   └── package.json
 ├── order-service/
 │   ├── proto/
-│   │   └── product.proto    ← Own copy of contract
+│   │   └── product.proto
 │   ├── src/
 │   │   ├── server.ts
-│   │   └── grpc-client/
+│   │   └── grpc/
+│   │       └── productClient.ts
 │   └── package.json
 └── TODO.md
 ```
