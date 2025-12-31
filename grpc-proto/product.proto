@@ -2,21 +2,15 @@ syntax = "proto3";
 
 package product;
 
-// Product Service gRPC definition
 service ProductService {
-  // Get product details by ID
   rpc GetProduct (GetProductRequest) returns (GetProductResponse);
-  
-  // Check if requested quantity is available in stock
   rpc CheckStock (CheckStockRequest) returns (CheckStockResponse);
 }
 
-// Request to get product by ID
 message GetProductRequest {
   string product_id = 1;
 }
 
-// Product details response
 message GetProductResponse {
   string id = 1;
   string name = 2;
@@ -24,13 +18,11 @@ message GetProductResponse {
   int32 stock = 4;
 }
 
-// Request to check stock availability
 message CheckStockRequest {
   string product_id = 1;
   int32 quantity = 2;
 }
 
-// Stock availability response
 message CheckStockResponse {
   bool available = 1;
   int32 current_stock = 2;

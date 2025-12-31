@@ -1,0 +1,10 @@
+{
+  "name": "@grpc-demo/proto",
+  "version": "1.0.0",
+  "description": "Shared gRPC proto definitions",
+  "main": "index.js",
+  "files": [
+    "*.proto"
+  ]
+}
+

@@ -1,8 +1,7 @@
 import * as grpc from '@grpc/grpc-js';
 import * as protoLoader from '@grpc/proto-loader';
-import path from 'path';
 
-const PROTO_PATH = path.join(__dirname, '../../proto/product.proto');
+const PROTO_PATH = require.resolve('@grpc-demo/proto/product.proto');
 const PRODUCT_GRPC_URL = process.env.PRODUCT_GRPC_URL || 'localhost:50051';
 
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {

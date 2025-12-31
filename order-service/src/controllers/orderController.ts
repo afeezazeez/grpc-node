@@ -14,6 +14,8 @@ export async function createOrder(req: Request, res: Response) {
 
     const stockCheck = await checkStock(productId, quantity);
 
+    console.log('Stock Check:', stockCheck);
+
     if (!stockCheck.available) {
       res.status(400).json({
         error: 'Insufficient stock',

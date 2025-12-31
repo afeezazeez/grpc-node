@@ -1,10 +1,9 @@
 import * as grpc from '@grpc/grpc-js';
 import * as protoLoader from '@grpc/proto-loader';
-import path from 'path';
 import { getProduct, checkStock } from './handlers/productHandlers';
 
 const GRPC_PORT = 50051;
-const PROTO_PATH = path.join(__dirname, '../../proto/product.proto');
+const PROTO_PATH = require.resolve('@grpc-demo/proto/product.proto');
 
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
   keepCase: true,
